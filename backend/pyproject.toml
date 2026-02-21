@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "meander-backend"
+version = "0.1.0"
+description = "Backend API for Meander - London itinerary planner"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Meander Team"}
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+
+[project.optional-dependencies]
+dev = [
+    "pytest",
+    "pytest-asyncio",
+    "httpx",
+]
+
+dependencies = [
+    "fastapi",
+    "uvicorn[standard]",
+    "pydantic",
+    "pydantic-settings",
+]
